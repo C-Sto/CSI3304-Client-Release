@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+  <system.serviceModel>
+    <bindings>
+      <webHttpBinding>
+        <binding name="webBinding" maxBufferSize="10485760" maxReceivedMessageSize="10485760" />
+      </webHttpBinding>
+    </bindings>
+    <behaviors>
+      <endpointBehaviors>
+        <behavior name="webby">
+          <webHttp/>
+        </behavior>
+      </endpointBehaviors>
+    </behaviors>
+    <client>
+      <endpoint address="http://localhost:26465/SWDEVA2REST.svc/" behaviorConfiguration="webby"
+        binding="webHttpBinding" bindingConfiguration="webBinding" contract="CSI3304_SWDEV_A2_Server.ISWDEVA2REST"
+        name="SWDEVA2REST" kind="webHttpEndpoint" endpointConfiguration="" />
+    </client>
+  </system.serviceModel>
+</configuration>
